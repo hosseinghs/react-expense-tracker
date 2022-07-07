@@ -1,4 +1,5 @@
 import ExpenseItem from "./ExpenseItem";
+import "../assets/style/expenses.css";
 
 const Expense = () => {
   return (
