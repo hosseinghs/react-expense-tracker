@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "../assets/style/expense-new.css";
 
-const NewExpense = () => {
+const NewExpense = ({ onSaveExpenseData }) => {
   const [title, setTitle] = useState("");
   const [amount, setAmount] = useState("");
   const [date, setDate] = useState("");
@@ -15,10 +15,12 @@ const NewExpense = () => {
   const submitForm = (e) => {
     e.preventDefault();
     const expense = {
+      id: Math.random().toString(),
       title,
       amount,
       date: new Date(date),
     };
+    onSaveExpenseData(expense);
     clearStates();
   };
 
@@ -30,11 +32,7 @@ const NewExpense = () => {
           <input
             type="text"
             value={title}
-            onKeyUp={(e) =>
-              setTimeout(() => {
-                setTitle(e.target.value);
-              }, 200)
-            }
+            onChange={(e) => setTitle(e.target.value)}
           />
         </div>
         <div className="new-expense__control">
@@ -42,7 +40,7 @@ const NewExpense = () => {
           <input
             type="number"
             value={amount}
-            onKeyUp={(e) => setTimeout(() => setAmount(e.target.value), 200)}
+            onChange={(e) => setAmount(e.target.value)}
           />
         </div>
         <div className="new-expense__control">
