@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ExpenseItem from "./ExpenseItem";
+import ExpenseList from "./ExpenseList";
 import ExpenseFilter from "./ExpenseFilter";
 import "../assets/style/expenses.css";
 
@@ -9,14 +9,15 @@ const Expense = ({ mockData }) => {
     setSelectedYear(year);
   };
 
+  const filterdExpense = mockData.filter(
+    (expense) =>
+      new Date(expense.date).getFullYear().toString() === selectedYear
+  );
+
   return (
     <div className="expenses">
-      <div>
-        <ExpenseFilter selectedYear={selectedYear} filterYear={filterYear} />
-      </div>
-      {mockData.map(({ id, title, amount, date }) => (
-        <ExpenseItem key={id} title={title} amount={amount} date={date} />
-      ))}
+      <ExpenseFilter selectedYear={selectedYear} filterYear={filterYear} />
+      <ExpenseList items={filterdExpense} />
     </div>
   );
 };
