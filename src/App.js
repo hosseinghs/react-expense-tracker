@@ -9,7 +9,7 @@ function App() {
   ]);
 
   const saveExpenseItem = (expense) => {
-    setExpenses([expense, ...expenses]);
+    setExpenses((pervExpenses) => [expense, ...pervExpenses]);
   };
 
   return (
