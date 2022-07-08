@@ -1,13 +1,13 @@
 import ExpenseDate from "./ExpenseDate";
 import "../assets/style/expense-item.css";
 
-const ExpenseItem = () => {
+const ExpenseItem = ({ title, amount, date }) => {
   return (
     <div className="expense-item">
-      <ExpenseDate />
+      <ExpenseDate date={date} />
       <div className="expense-item__description">
-        <h2>Car Insurance</h2>
-        <div className="expense-item__price">$300</div>
+        <h2>{title}</h2>
+        <div className="expense-item__price">${amount}</div>
       </div>
     </div>
   );

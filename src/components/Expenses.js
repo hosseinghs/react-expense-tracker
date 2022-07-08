@@ -1,12 +1,13 @@
 import ExpenseItem from "./ExpenseItem";
 import "../assets/style/expenses.css";
 
-const Expense = () => {
+const Expense = ({mockData}) => {
+ 
   return (
     <div className="expenses">
-      <ExpenseItem />
-      <ExpenseItem />
-      <ExpenseItem />
+      {mockData.map(({ id, title, amount, date }) => (
+        <ExpenseItem key={id} title={title} amount={amount} date={date} />
+      ))}
     </div>
   );
 };
