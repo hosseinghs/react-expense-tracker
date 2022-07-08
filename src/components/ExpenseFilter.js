@@ -1,14 +1,14 @@
-import '../assets/style/expense-filter.css'
-const ExpenseFilter = () => {
+import "../assets/style/expense-filter.css";
+const ExpenseFilter = ({ selectedYear, filterYear }) => {
   const updateFilter = (e) => {
-    console.log(e.target.value);
+    filterYear(e.target.value);
   };
 
   return (
     <div className="expenses-filter">
       <div className="expenses-filter__control">
         <label>Filter By Year</label>
-        <select onChange={updateFilter}>
+        <select defaultValue={selectedYear} onChange={updateFilter}>
           <option value="2022">2022</option>
           <option value="2021">2021</option>
           <option value="2020">2020</option>
