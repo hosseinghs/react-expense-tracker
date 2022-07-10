@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Expenses from "./components/Expenses";
-import NewExpense from "./components/NewExpense";
+import Expense from "./components/Expense";
+import NewExpense from "./components/Expense/NewExpense";
 function App() {
   const [expenses, setExpenses] = useState([
     { id: 0, title: "car insurance", amount: 2000, date: "2020-4-22" },
@@ -15,7 +15,7 @@ function App() {
   return (
     <>
       <NewExpense onSaveExpenseData={saveExpenseItem} />
-      <Expenses mockData={expenses} />
+      <Expense mockData={expenses} />
     </>
   );
 }

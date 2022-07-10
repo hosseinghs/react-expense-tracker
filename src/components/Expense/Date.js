@@ -1,4 +1,4 @@
-import "../assets/style/expense-date.css";
+import "../../assets/style/expense/date.css";
 
 const ExpenseDate = ({ date }) => {
   const day = new Date(date).getDay();

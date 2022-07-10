@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../assets/style/expense-new.css";
+import "../../assets/style/expense/new.css";
 
 const NewExpense = ({ onSaveExpenseData }) => {
   const [title, setTitle] = useState("");

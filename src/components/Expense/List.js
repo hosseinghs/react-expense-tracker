@@ -1,5 +1,5 @@
-import ExpenseItem from "./ExpenseItem";
-import "../assets/style/expense-list.css";
+import Item from "./Item";
+import "../../assets/style/expense/list.css";
 
 const ExpenseList = ({ items }) => {
   if (items.length === 0)
@@ -8,7 +8,7 @@ const ExpenseList = ({ items }) => {
   return (
     <ul className="expenses-list">
       {items.map(({ id, title, amount, date }) => (
-        <ExpenseItem key={id} title={title} amount={amount} date={date} />
+        <Item key={id} title={title} amount={amount} date={date} />
       ))}
     </ul>
   );

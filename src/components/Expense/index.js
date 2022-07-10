@@ -1,7 +1,7 @@
 import { useState } from "react";
-import ExpenseList from "./ExpenseList";
-import ExpenseFilter from "./ExpenseFilter";
-import "../assets/style/expenses.css";
+import ExpenseList from "./List";
+import ExpenseFilter from "./Filter";
+import "../../assets/style/expense/expenses.css";
 
 const Expense = ({ mockData }) => {
   const [selectedYear, setSelectedYear] = useState("2020");

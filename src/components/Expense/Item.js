@@ -1,5 +1,5 @@
-import ExpenseDate from "./ExpenseDate";
-import "../assets/style/expense-item.css";
+import ExpenseDate from "./Date";
+import "../../assets/style/expense/item.css";
 
 const ExpenseItem = ({ title, amount, date }) => {
   const _amount = amount.toLocaleString("en-US");
