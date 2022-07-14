@@ -1,6 +1,7 @@
 import { useState } from "react";
 import ExpenseList from "./List";
 import ExpenseFilter from "./Filter";
+import ExpensesChart from "../chart/ExpensesChart";
 import "../../assets/style/expense/expenses.css";
 
 const Expense = ({ mockData }) => {
@@ -17,6 +18,7 @@ const Expense = ({ mockData }) => {
   return (
     <div className="expenses">
       <ExpenseFilter selectedYear={selectedYear} filterYear={filterYear} />
+      <ExpensesChart expenses={mockData} />
       <ExpenseList items={filterdExpense} />
     </div>
   );
